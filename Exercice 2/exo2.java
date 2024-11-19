@@ -8,11 +8,11 @@ public class Veterinaire {
         
     }
     
-    public void Soins(String type, String nom){
+    public void Soins(String type, String nom) {
         System.out.println("Soins pour le " + type + nom);
     }
     
-    public void Examens(String type){
+    public void Examens(String type) {
         if (type.equals("Chien")) {
             System.out.println("Examen des pattes");
         } else if (type.equals("Chat")) {
@@ -20,7 +20,7 @@ public class Veterinaire {
         }
     }
     
-    public void effectuer(String type){
+    public void effectuer(String type) {
         if (type.equals("Chien")) {
             System.out.println("Injection de vaccin");
         } else if (type.equals("Chat")) {
