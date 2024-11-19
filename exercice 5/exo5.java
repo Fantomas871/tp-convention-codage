@@ -1,5 +1,7 @@
 public class CommandeManager {
+
     public void traiterCommande(String status, boolean estUrgente, double montant) {
+        
         if (status.equals("NOUVELLE")) {
             if (estUrgente) {
                 System.out.println("Traiter la commande immédiatement.");

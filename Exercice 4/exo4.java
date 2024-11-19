@@ -1,16 +1,73 @@
 public class Zoo {
-    public void nourrirAnimal(String type, String nom) {
-        if (type.equals("Chien")) {
-            System.out.println("Donner de la nourriture pour chien à " + nom);
-            System.out.println(nom + " aboie après avoir mangé.");
-        } else if (type.equals("Chat")) {
-            System.out.println("Donner de la nourriture pour chat à " + nom);
-            System.out.println(nom + " ronronne après avoir mangé.");
-        } else if (type.equals("Oiseau")) {
-            System.out.println("Donner des graines à " + nom);
-            System.out.println(nom + " chante après avoir mangé.");
-        } else {
-            System.out.println("Type d'animal inconnu.");
+
+    public void nourrirAnimal(String type) {
+        switch (type){
+            case "Chien":
+                Chien.nourrir();
+            case "Chat":
+                Chat.nourrir();
+            case "Oiseau":
+                Oiseau.nourrir();
         }
+    }
+
+}
+
+abstract class Animal {
+    protected String nom;
+    protected int age;
+
+    public abstract void parler();
+    public abstract void nourrir();
+    
+}
+
+public class Chien extends Animal {
+    super();
+    String type="Chien";
+
+    public void parler(){
+        System.out.println("Woof Woof");
+    }
+
+    public void nourrir (){
+        System.out.println("Donner de la nourriture pour chien à " + this.nom);
+        System.out.println(this.nom + " aboie après avoir mangé.");
+    }
+}
+
+public class Chat extends Animal {
+    super();
+    String type="Chat";
+
+    public void parler(){
+        System.out.println("Miaou");
+    }
+
+    public void decrire(){
+        System.out.println("Nom: "+this.nom+", Âge: "+this.age+" ans, Type: "+this.type);
+    }
+
+    public void nourrir (){
+        System.out.println("Donner de la nourriture pour chat à " + this.nom);
+        System.out.println(this.nom + " ronronne après avoir mangé.");
+    }
+}
+
+public class Oiseau extends Animal {
+    super();
+    String type="Oiseau";
+
+    public void parler(){
+        System.out.println("Cui Cui");
+    }
+
+    public void decrire(){
+        System.out.println("Nom: "+this.nom+", Âge: "+this.age+" ans, Type: "+this.type);
+    }
+
+        public void nourrir (){
+            System.out.println("Donner des graines à " + this.nom);
+            System.out.println(this.nom + " chante après avoir mangé.");
     }
 }
