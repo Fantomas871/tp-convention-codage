@@ -2,19 +2,26 @@ public class CalculateurPrix {
 
     public double calculerPrixTotal(int quantite, String categorie) {
         double prixUnitaire = 0;
+        prixUnitaire+=type(categorie);
+        return prixUnitaire * quantite * enGros(quantite);
+    }
 
+    public double type (String categorie){
         if (categorie.equals("Standard")) {
-            prixUnitaire = 10.0;
+             return 10.0;
         } else if (categorie.equals("Premium")) {
-            prixUnitaire = 20.0;
+            return = 20.0;
         } else if (categorie.equals("Luxe")) {
-            prixUnitaire = 50.0;
-        }
-
-        if (quantite > 10) {
-            return (prixUnitaire * quantite) * 0.9; // 10% de réduction pour les commandes en gros
-        } else {
-            return prixUnitaire * quantite;
+            return = 50.0;
         }
     }
+
+    public double enGros (int quatite){
+        if (quantite>10){
+            return 0.9;
+        }else{
+            return 1;
+        }
+    }
+
 }
